@@ -1,0 +1,3 @@
+rootProject.name = 'w6d3MakeANativeMovileApp'
+
+include ':app'
