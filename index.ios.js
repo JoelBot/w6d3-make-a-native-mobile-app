@@ -10,37 +10,29 @@ import {
   StyleSheet,
   Text,
   View,
-  Navigator
+  Navigator,
+  TextInput,
+  Image,
 } from 'react-native';
-import UselessTextInput from './components/TextInput';
+// import NavAllDay from './components/Navigator';
+
 
 export default class w6d3MakeANativeMovileApp extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = { text: 'something'}
-  // }
+  constructor(props) {
+    super(props)
+    this.state = { text: '  Placeholder' }
+  }
   render() {
     return (
       <View style={styles.container}>
-      <View style={{flex: 1, flexDirection: 'row'}}>
-      <Text style={styles.welcome, {backgroundColor: 'powderblue'}}>
-        Welcome to React Native!
-      </Text>
-       </View>
-      <View style={{flex: 1, flexDirection: 'row'}}>
-      <Text style={styles.instructions, {backgroundColor: 'skyblue'}}>
-        To get started, edit index.ios.js
-      </Text>
-      </View>
-      <View style={{flex: 1, flexDirection: 'row'}}>
-      <Text style={styles.instructions, {backgroundColor: 'steelblue'}}>
-        Press Cmd+R to reload,{'\n'}
-        Cmd+D or shake for dev menu
-      </Text>
-      </View>
-        {/* <Text style={styles.welcome}>
+
+        <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
+        <Image
+          style={{width: 200, height: 200}}
+          source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+        />
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
         </Text>
@@ -48,8 +40,13 @@ export default class w6d3MakeANativeMovileApp extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
-      {this.props.children} */}
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          onChangeText={(text) => this.setState({text})}
+          value={this.state.text}
+        />
       </View>
+
     );
   }
 }
